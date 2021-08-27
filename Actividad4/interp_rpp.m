@@ -1,6 +1,7 @@
 function q = interp_rpp(d_0_3,inter)
 % sts es el step size o tamaño de paso
 %pa in R^ (n x 3), n número de puntos vía
+% Hola mundo
 l1=1; 
 l2=1.5;
 la=1;
