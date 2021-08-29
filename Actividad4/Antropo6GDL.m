@@ -61,7 +61,7 @@ antropom.plotopt = {'workspace', [-6 6 -6 6 0 8]}; %opcion del m?todo plot,
 %Busquen los m?todos de SerialLink, en particular busquen
 % fkine, plot, teach, ikine, mtraj, ctraj, fdyn
 antropom.teach(qz)
-%T=antropom.fkine(qfinal)
-%XYZ=[path ones([size(path,1) 1])];
-%q=interp(XYZ,2);
+% T=antropom.fkine(qfinal)
+% XYZ=[path ones([size(path,1) 1])];
+% q=interp(XYZ,2);
 %rpp.plot(q);
