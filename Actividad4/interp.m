@@ -1,12 +1,12 @@
-function q = interp(d_0_3,interp)
-% sts es el step size o tamaño de paso
-%pa in R^ (n x 3), n número de puntos vía
+function q = interp(d_0_3,inter)
+% sts es el step size o tamaï¿½o de paso
+%pa in R^ (n x 3), n nï¿½mero de puntos vï¿½a
 
 
-[n,c]=size(d_0_3);% se toma al número de puntos vía, n
+[n,c]=size(d_0_3);% se toma al nï¿½mero de puntos vï¿½a, n
 q_0_3=zeros(n,3);
 for i=1:1:n
-q_0_3(i,1:3)=inversa(d_0_3(i,1:3));
+q_0_3(i,1:3) = inversa_rpp(d_0_3(i,1:3));
 end
 
 tiempo=0;
@@ -16,10 +16,10 @@ end
 q=zeros((tiempo*10)+1,3);
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-q_0_3 = [0 0 0 0;q_0_3 d_0_3(:,4)]
+q_0_3 = [0 0 0 0;q_0_3 d_0_3(:,4)];
 
 
-if (interp==1)
+if (inter==1)
     T=1;
     for i=1:1:n
         t=q_0_3(i+1,4);
@@ -28,7 +28,8 @@ if (interp==1)
         T=T+(t*10);
     end
    
-elseif(interp==2)
+elseif(inter==2)
+    
     T=1;
     for i=1:1:n
         t=q_0_3(i+1,4);    
@@ -37,7 +38,7 @@ elseif(interp==2)
         T=T+(t*10);
     end
     
-elseif(interp==3)
+elseif(inter==3)
      T=1;
     for i=1:1:n
         t=q_0_3(i+1,4);    
