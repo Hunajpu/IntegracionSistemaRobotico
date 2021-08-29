@@ -1,4 +1,4 @@
-function q = inversa(d_03)
+function q = inversa(d_03,r)
 % documentacion
 
 dx=d_03(1);
@@ -18,9 +18,10 @@ ox=dx;
 oy=dy;
 oz=dz;
 %% Orientación del efector 
-alpha=pi;
-theta=sin(ox/sqrt(ox^2+oy^2));
-r=rotz(theta)*rotx(alpha);
+% alpha=pi;
+% %theta=sin(ox/sqrt(ox^2+oy^2));
+% theta=asind(ox/sqrt(ox^2+oy^2+oz^2));
+% r=rotz(theta)*rotx(alpha);
 % r13=cos(alpha)*(ox/sqrt(ox^2+oy^2));
 % r23=cos(alpha)*(oy/sqrt(ox^2+oy^2));
 % r33=sin(alpha);
@@ -43,6 +44,10 @@ c1=cos(q1);
 s1=sin(q1);
 q4 = atan2(r(3,3)*s23 + r(1,3)*c23*c1 + r(2,3)*c23*s1, r(3,3)*c23 - r(1,3)*s23*c1 - r(2,3)*s23*s1);
 q6 = atan2(r(1,1)*s1-r(2,1)*c1,r(2,2)*c1-r(1,2)*s1);
+
+%q4=atan2(c1*c23*r(1,3)+s1*c23*r(2,3)+s23*r(3,3),-c1*c23*r(1,3)-s1*s23*r(2,3)+c23*r(3,3));
+%q5=atan2(-s1*r(1,1)+c1*r(2,1),s1*r(1,2)-c1*r(2,2));
+%q6=atan2(-s1*r(1,1)+c1*r(2,1),s1*r(1,2)-c1*r(2,2));
 
 q=[q1,q2,q3,q4,q5,q6];
 

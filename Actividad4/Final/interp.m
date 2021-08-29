@@ -1,4 +1,4 @@
-function q = interp(d_0_3,inter)
+function q = interp(d_0_3,inter,matObj)
 % sts es el step size o tamaño de paso
 %pa in R^ (n x 3), n número de puntos vía
 
@@ -6,7 +6,7 @@ function q = interp(d_0_3,inter)
 q_0_6=zeros(n,6);
 
 for i=1:1:n
-    q_0_6(i,1:6)=inversa(d_0_3(i,1:3));
+    q_0_6(i,1:6)=inversa(d_0_3(i,1:3),matObj.Txx(1:3,1:3,i));
 end
 
 tiempo=0;

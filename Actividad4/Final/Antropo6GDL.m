@@ -39,7 +39,13 @@ antropom.plotopt = {'workspace', [-9 9 -9 9 0 14]}; %opcion del m?todo plot,
 %T=antropom.fkine(qfinal)
 %% Animacion del seguimiento de Trayectoria
 XYZ=[path ones([size(path,1) 1])];
-q=interp(XYZ,2);
+%R=matObj.Txx;
+% R=zeros(3,3,size(matObj.Txx,3));
+% for i=1:1:size(R,3)
+%     R(:,:,i)=matObj.Txx(1:3,1:3,i);
+% end
+% q=interp(XYZ,2,matObj);
+q=interp(XYZ,2,matObj);
 %antropom.plot(q);
 %% Graficación de Trayectoria Real
 hold on
