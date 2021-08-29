@@ -7,40 +7,16 @@ dz=d_03(3);
 if(dy==0)
     dy=10^-10;
 end
-l1=1; 
-l2=1.5;
-la=1;
-lb=.5;
 
+a1=5;a2=5;d1=7;d2=0.4;d3=1;
 
-Th=atan2(la,lb);
-l3=sqrt(la^2+lb^2);
+q1 = atan2(dy, dx) - atan2(d2, sqrt(dx^2 + dy^2 - d2^2));
 
-q1=atan2(dy,dx);
+D = (dx^2 + dy^2 + (d1-dz)^2 - a1^2 - a2^2)/(2*a1*a2);
 
-X=(dx^2+dy^2+(dz-l1)^2-l2^2-l3^2)/(2*l2*l3);
-q3=atan2(-sqrt(1-X^2),X)+Th;
+q3 = atan2(-sqrt(1-D^2), D);
 
-A=(l2.^2+l3.^2+2.*l2.*l3.*cos(q3+(-1).*Th)).^(-1).*((dz+(-1).*l1).*l2+(dz+(-1).*l1).*l3.*cos(q3+(-1).*Th)+(-1).*dy.*l3.*csc(q1).*sin(q3+(-1).*Th));
-B=(l2.^2+l3.^2+2.*l2.*l3.*cos(q3+(-1).*Th)).^(-1).*(dy.*(l2+l3.*cos(q3+(-1).*Th)).*csc(q1)+(dz+(-1).*l1).*l3.*sin(q3+(-1).*Th));
-
-q2=atan2(A,B);
-
-% lol=l2.*cos(q1).*cos(q2)+l3.*(cos(q1).*cos(q2).*cos(q3+(-1).*Th)+(-1).*cos(q1).*sin(q2).*sin(q3+(-1).*Th))
-%     
-% if(dx==l2.*cos(q1).*cos(q2)+l3.*(cos(q1).*cos(q2).*cos(q3+(-1).*Th)+(-1).*cos(q1).*sin(q2).*sin(q3+(-1).*Th)))
-%     dx
-%     l2.*cos(q1).*cos(q2)+l3.*(cos(q1).*cos(q2).*cos(q3+(-1).*Th)+(-1).*cos(q1).*sin(q2).*sin(q3+(-1).*Th))
-% end
-% if(dy==l2.*cos(q2).*sin(q1)+l3.*(cos(q2).*cos(q3+(-1).*Th).*sin(q1)+(-1).*sin(q1).*sin(q2).*sin(q3+(-1).*Th)))
-%     2
-% end
-% if(dz==l1+l2.*sin(q2)+l3.*(cos(q3+(-1).*Th).*sin(q2)+cos(q2).*sin(q3+(-1).*Th)))
-%     3
-% end
-
-
-
+q2 = atan2(d1-dz, sqrt(dx^2 + dy^2)) - atan2(a2*sin(q3), a1 + a2*cos(q3));
 
 q=[q1,q2,q3];
 
