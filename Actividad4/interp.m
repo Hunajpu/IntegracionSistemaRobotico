@@ -1,4 +1,4 @@
-function q = interp(d_0_3,interpolacion)
+function q = interp(d_0_3,interp)
 % sts es el step size o tamaño de paso
 %pa in R^ (n x 3), n número de puntos vía
 
@@ -19,7 +19,7 @@ q=zeros((tiempo*10)+1,3);
 q_0_3 = [0 0 0 0;q_0_3 d_0_3(:,4)]
 
 
-if (interpolacion==1)
+if (interp==1)
     T=1;
     for i=1:1:n
         t=q_0_3(i+1,4);
@@ -28,7 +28,7 @@ if (interpolacion==1)
         T=T+(t*10);
     end
    
-elseif(interpolacion==2)
+elseif(interp==2)
     T=1;
     for i=1:1:n
         t=q_0_3(i+1,4);    
@@ -37,7 +37,7 @@ elseif(interpolacion==2)
         T=T+(t*10);
     end
     
-elseif(interpolacion==3)
+elseif(interp==3)
      T=1;
     for i=1:1:n
         t=q_0_3(i+1,4);    
